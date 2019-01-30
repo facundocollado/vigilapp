@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Contactos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content outer-content>
+
+  <ion-list>
+
+    <ion-item-group>
+
+      <button ion-item ion-item detail-none>
+        <ion-icon name="search" item-start color="dark"></ion-icon>
+        <ion-label>Buscar seg&uacute;n nombre de usuario</ion-label>
+        <ion-icon item-end name="arrow-forward"></ion-icon>
+      </button>
+
+
+      <button ion-item detail-none (click)="contactAddByCode()">
+        <ion-icon name="barcode" item-start color="dark"></ion-icon>
+        <ion-label>Agregar utilizando c&oacute;digo de contacto</ion-label>
+        <ion-icon item-end name="arrow-forward"></ion-icon>
+      </button>
+
+      <button ion-item detail-none>
+        <ion-icon name="contacts" item-start color="dark"></ion-icon>
+        <ion-label>Buscar entre mis contactos</ion-label>
+        <ion-icon item-end name="arrow-forward"></ion-icon>
+      </button>
+
+    </ion-item-group>
+
+  </ion-list>
+
+  <div class="division"></div>
+
+  <ion-list class="compartir_codigo">
+
+    <ion-item-group>
+
+      <button ion-item detail-none (click)="contactShareCode()">
+        <ion-icon name="share" item-start color="dark"></ion-icon>
+        <ion-label>Compartir mi c&oacute;digo de contacto</ion-label>
+      </button>
+
+    </ion-item-group>
+
+  </ion-list>
+</ion-content>

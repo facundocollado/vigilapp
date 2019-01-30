@@ -1,3 +1,95 @@
 page-home {
-
+    #active_contacts_menu {
+        width: 100%;
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        z-index: 1;
+    }
+    #stop_contacts_location {
+        width: 6em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .no_shadow {
+        box-shadow: none !important;
+    }
+    .slider {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    .slider:before {
+        content: '';
+        height: 70%;
+        width: 1px;
+        position: absolute;
+        top: 15%;
+        background-color: #E7E7E7;
+    }
+    .slide {
+        flex-grow: 1;
+        flex-basis: 0;
+        flex: 0 0 auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        width: 6em;
+        text-align: center;
+        padding: 0.5em;
+        /*removemos estilos de angular del press y touch events*/
+        touch-action: pan-x !important;
+        /*user-select: none  !important;;
+        -webkit-user-drag: none  !important;;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;*/
+    }
+    /* Ripple effect */
+    .ripple {
+        background-position: center;
+        transition: background 0.5s;
+    }
+    .ripple:hover {
+        background: white radial-gradient(circle, transparent 1%, white 1%) center/15000%;
+        background-color: transparent;
+    }
+    .ripple:active {
+        background-color: gray;
+        background-size: 100%;
+        transition: background 0s;
+    }
+    .slide img {
+        border-radius: 70px;
+        max-width: none;
+        /*height: 100%;
+        min-width: 100%;
+        min-height: 100%;*/
+    }
+    .slide_name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    #map_canvas {
+        height: 100%;
+    }
+    .locate_me {
+        bottom: 3em;
+    }
+    .contact-button-container {
+        bottom: 3em;
+    }
+    .action-buttons {
+        display: block;
+        width: calc(100% - 16px);
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        text-align: right;
+        z-index: 999;
+        button {
+            display: inline-block;
+            margin: 4px;
+        }
+    }
 }

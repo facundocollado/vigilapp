@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,43 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.error {
+    text-align: center;
+    .toast-wrapper {
+        background: darken(#ed4039, 25%);
+        /*transform: translateY(70px) !important;*/
+    }
+}
+/*h2 items gets cut otherwise*/
+[padding] h2:first-child {
+    margin-top: 0rem !important;
+}
+
+/*hides X scrollbar*/
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    /*display: none;*/
+}
+
+/* MODAL CSS*/
+
+.modalStyle {
+    /*background: rgba(0, 0, 0, 0.5) !important;
+  padding: 5% 5%  !important;*/
+    ion-backdrop {
+        visibility: visible !important;
+    }
+    .modal-wrapper {
+        border-radius: 10px 10px 0px 0px;
+        overflow: hidden;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        margin: auto auto;
+        position: absolute;
+        width: 90%;
+        height: 95%;
+    }
+}

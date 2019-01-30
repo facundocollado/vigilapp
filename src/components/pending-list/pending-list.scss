@@ -1,0 +1,20 @@
+pending-list {
+    .accept_pending{
+        padding: 0px 1.6em !important;
+        height: 45px !important;
+        font-size: 1.4rem !important;
+    }
+    .pending_empty{
+        border-bottom: 1px solid rgba(0, 0, 0, .10);
+        border-top: 1px solid rgba(0, 0, 0, .10);
+        color: #9197a3;
+        font-size: 13px;
+        padding: 12px;
+        text-align: center;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .pending_empty_back{
+        color: #0084ff;
+    }
+}

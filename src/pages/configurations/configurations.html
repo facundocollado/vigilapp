@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Configuraciones</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-list-header>
+      Localizaci&oacute;n pasiva
+    </ion-list-header>
+
+    <ion-item text-wrap>
+      <ion-icon name="locate" item-start color="primary"></ion-icon>
+      <ion-label>{{passiveMode === true ? "Desactivar" : "Activar"}}
+        <ion-note>
+          <h5>Permite a otros localizarte mientras Finder no est&aacute; en uso.</h5>
+        </ion-note>
+      </ion-label>
+      <ion-toggle color="primary" [(ngModel)]="passiveMode" (ionChange)="passiveModeChange()"></ion-toggle>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-icon name="time" item-start color="dark"></ion-icon>
+      <ion-label class="titulo">Intervalo
+        <ion-note>
+          <h5>Indica el intervalo de tiempo en que se informar&aacute; de tu ubicaci&oacute;n.</h5>
+        </ion-note>
+      </ion-label>
+      <ion-select [(ngModel)]="this.confJsonProvider.passiveInterval" interface="popover" (ionChange)="passivIntervalChange()">
+          <ion-option value="15000">15 segundos </ion-option>
+        <ion-option value="300000">5 minutos </ion-option>
+        <ion-option value="600000">10 minutos </ion-option>
+        <ion-option value="900000">15 minutos </ion-option>
+        <ion-option value="1800000">30 minutos</ion-option>
+        <ion-option value="3600000">1 hora</ion-option>
+        <ion-option value="7200000">2 horas</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

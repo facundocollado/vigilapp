@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-segment mode="md" [(ngModel)]="tabs" color="dark">
+
+      <ion-segment-button value="contacts" text-wrap (click)="selectTab(0)" value="0">
+        A&ntilde;adidos
+      </ion-segment-button>
+
+      <ion-segment-button value="pending" text-wrap (click)="selectTab(1)" value="1">
+        Pendientes
+      </ion-segment-button>
+
+    </ion-segment>
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
+    <ion-slide>
+      <contacts-list></contacts-list>
+    </ion-slide>
+    <ion-slide>
+      <pending-list></pending-list>
+    </ion-slide>
+  </ion-slides>
+
+
+
+
+  <!--<div [ngSwitch]="contactsAction">
+    <ion-list *ngSwitchCase="'contacts'">
+        
+    </ion-list>
+    <ion-list *ngSwitchCase="'pending'">
+      <ion-item>
+        
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+
+
+  <ion-list text-wrap [ngSwitch]="contactsAction">
+
+    <ion-list *ngSwitchCase="contacts">
+      <ion-item>
+        <contacts-list></contacts-list>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="pending">
+      <ion-item>
+        ALERTA
+      </ion-item>
+    </ion-list>-->
+
+  <!--<ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2>Roberto</h2>
+      <p>Claro, por supuesto</p>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="assets/imgs/001.jpg">
+      </ion-avatar>
+      <h2>Roberto</h2>
+      <p>Claro, por supuesto</p>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2>Roberto</h2>
+      <p>Claro, por supuesto</p>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="assets/imgs/001.jpg">
+      </ion-avatar>
+      <h2>Roberto</h2>
+      <p>Claro, por supuesto</p>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2>Roberto</h2>
+      <p>Claro, por supuesto</p>
+    </ion-item>
+
+  </ion-list>-->
+
+</ion-content>

@@ -1,17 +1,119 @@
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header>-->
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+  <div *ngIf="activeContacts.length > 0" id="active_contacts_menu">
+    <div id="stop_contacts_location">
+
+      <button class="no_shadow" ion-fab color="light" (click)="removeAllActiveContacts()">
+        <ion-icon class="boxclose" name="close"></ion-icon>
+      </button>
+
+    </div>
+
+    <div class="slider">
+
+      <div class="slide ripple" *ngFor="let activeContact of activeContacts;index as i" 
+      (click)="showMarkerInfo(i)" (press)="removeElement(i)" >
+
+        <div *ngIf="activeContact.image;then showImage; else noImage"></div>
+        <ng-template #showImage>
+          <img src={{activeContact.image}} alt="avatar">
+        </ng-template>
+        <ng-template #noImage>
+          <img src="assets/imgs/profile/no_image.png" alt="avatar">
+        </ng-template>
+
+        <div class="slide_name">
+
+          <div *ngIf="activeContact.name;then showName; else noName"></div>
+          <ng-template #showName>
+            {{activeContact.name}}
+          </ng-template>
+
+          <ng-template #noName>
+            {{activeContact.device_model}}
+          </ng-template>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!--<ng-container *ngFor="let ava of avatar; let i = index; trackBy: trackByFn">
+        <div class="slide ripple">
+          <img src={{ava.imagen}} alt="avatar">
+          <div class="slide_name">
+            {{ava.nombre}}
+          </div>
+        </div>
+      </ng-container>-->
+
+
+  <!--<button ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking">
+    <ion-icon name="locate"></ion-icon>
+    Start Trackinger
+  </button>
+  <button ion-button full color="danger" icon-left (click)="stopTracking()" *ngIf="isTracking">
+    <ion-icon name="hand"></ion-icon>
+    Stop Tracking
+  </button>
+
+  <button ion-button full icon-left (click)="stopPassiveLocation()">
+    <ion-icon name="cloud-upload"></ion-icon>
+    Stop passive
+  </button>
+
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <button ion-button (click)="loadMap()" secondary>
+    Localizacion consola
+  </button>-->
+
+  <div id="map_canvas">
+
+    <!--<ion-fab left bottom #contacts class="contact-button-container">
+      <button ion-fab mini color="default">
+        <ion-icon name="person"></ion-icon>
+      </button>
+      <ion-fab-list side="top">
+        <button ion-fab (click)="locateContact(contacts)">
+          <ion-icon name="contact"></ion-icon>
+        </button>
+        <button ion-fab (click)="locateGroup(contacts)">
+          <ion-icon name="contacts"></ion-icon>
+        </button>
+        <button ion-fab (click)="locateContactAdd(contacts)">
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>-->
+
+    <ion-fab left bottom class="contact-button-container" (click)="locateContact(contacts)">
+      <button ion-fab mini color="default" >
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-fab>
+
+    <!--contact, contacts, person-add -->
+    <ion-fab class="locate_me" right bottom (click)="locateMe()">
+      <button ion-fab color="light">
+        <ion-icon name="locate"></ion-icon>
+      </button>
+    </ion-fab>
+  </div>
+
+
 </ion-content>

@@ -1,0 +1,46 @@
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refreshContacts($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para actualizar"
+      refreshingSpinner="circles" refreshingText="Actualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="contacts; else noContactsBlock">
+
+    <ion-list>
+      <ion-item *ngFor="let contactItem of contactsList;index as i" text-wrap>
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile/no_image.png">
+        </ion-avatar>
+        <div *ngIf="contactItem.name;then showName else showUid"></div>
+        <ng-template #showName>
+          <h2>{{contactItem.name}}</h2>
+          <p>{{contactItem.device_model}}</p>
+        </ng-template>
+        <ng-template #showUid>
+          <h2>{{contactItem.device_model}}({{contactItem.device_manufacturer}})</h2>
+        </ng-template>
+        <h3>{{contactItem.date}}</h3>
+        <!--<button ion-button item-end (click)="acceptPending(contactItem.uid, i)" class="accept_pending">Aceptar</button>-->
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <ng-template #noContactsBlock>
+
+    <div class="contacts_empty">
+      Agregue nuevos contactos a su lista.
+      <!--<div class="pending_empty_back" (click)="swipeRight()">Volver al listado de contactos.</div>-->
+    </div>
+
+  </ng-template>
+
+  <ion-fab right bottom (click)="contactAdd()">
+    <button ion-fab color="primary">
+      <ion-icon name="person-add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

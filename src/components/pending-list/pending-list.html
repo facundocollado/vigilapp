@@ -1,0 +1,40 @@
+<ion-content>
+
+  <ion-refresher (ionRefresh)="refreshPending($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Deslize hacia abajo para actualizar"
+      refreshingSpinner="circles" refreshingText="Actualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div [@fadeInOut] *ngIf="pendings; else noPendingBlock">
+
+    <ion-list>
+      <ion-item *ngFor="let pendingItem of pendingsList;index as i" text-wrap>
+        <ion-avatar item-start>
+          <img src="assets/imgs/profile/no_image.png">
+        </ion-avatar>
+        <div *ngIf="pendingItem.name;then showName else showUid"></div>
+        <ng-template #showName>
+          <h2>{{pendingItem.name}}</h2>
+          <p>{{pendingItem.device_model}}</p>
+        </ng-template>
+        <ng-template #showUid>
+          <h2>{{pendingItem.device_model}}({{pendingItem.device_manufacturer}})</h2>
+        </ng-template>
+        <h4>{{pendingItem.date}}</h4>
+        <button ion-button item-end (click)="acceptPending(pendingItem.uid, i)" class="accept_pending">Aceptar</button>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <ng-template #noPendingBlock>
+
+    <div class="pending_empty">
+      No se han encontrado solicitudes pendientes.
+      <!--<div class="pending_empty_back" (click)="swipeRight()">Volver al listado de contactos.</div>-->
+    </div>
+
+  </ng-template>
+
+</ion-content>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1088287454569",
+    "firebase_url": "https://ionic-maps-212823.firebaseio.com",
+    "project_id": "ionic-maps-212823",
+    "storage_bucket": "ionic-maps-212823.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088287454569:android:e40aa8667b279b00",
+        "android_client_info": {
+          "package_name": "com.yaher.finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088287454569-ic37bq6jp318tq2tv9hn9vlg8pmn3a7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPdsSGOttid2NciGFinb5jV_daYIUSMIA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

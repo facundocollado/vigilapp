@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Nuevo contacto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="addContact()" [formGroup]="contactAddForm">
+
+    <!--<p *ngIf="submitAttempt" style="color: #ea6153;">Por favor complete los datos de contacto.</p>-->
+
+    <!--<ion-item>
+      <ion-label color="primary" floating>Nombre</ion-label>
+      <ion-input type="text" formControlName="name" class="form-control" maxlength="30" [ngClass]="{ 'is-invalid': submitAttempt && name.errors }"></ion-input>
+    </ion-item>
+
+    <div class="information_message" *ngIf="!submitAttempt || !name.errors">Nombre para mostrar.</div>
+
+    <div class="invalid_message" *ngIf="submitAttempt && name.errors">
+
+      <div *ngIf="name.errors.required">Debe ingresar un nombre. </div>
+      <div *ngIf="name.errors.maxlength">M&aacute;ximo 30 caracteres. </div>
+      <div *ngIf="name.errors.pattern">Utilize sólo caracteres y n&uacute;meros. </div>
+
+    </div>-->
+
+    <ion-item>
+      <ion-label color="primary" floating>C&oacute;digo</ion-label>
+      <ion-input type="text" formControlName="code" class="form-control" [ngClass]="{ 'is-invalid': submitAttempt && code.errors }"></ion-input>
+    </ion-item>
+
+    <div class="information_message" *ngIf="!submitAttempt || !code.errors">Pegue aqu&iacute; el c&oacute;digo de contacto.</div>
+    
+    <div class="invalid_message" *ngIf="submitAttempt && code.errors">
+      <div *ngIf="code.errors.required">Debe ingresar el c&oacute;digo de contacto. </div>
+    </div>
+
+    <div class="submit_button_container">
+      <button ion-button block type="submit">Agregar contacto</button>
+    </div>
+
+    <!--[disabled]='contactAddForm.invalid'-->
+  </form>
+
+</ion-content>
